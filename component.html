@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <!-- External dependencies -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.js"></script>-->
+        <script src="http://aui-cdn.atlassian.com/aui-adg/6.0.0/js/aui.js"></script>
+        <script src="http://aui-cdn.atlassian.com/aui-adg/6.0.0/js/aui-experimental.js"></script>
+        <!--<script src="http://aui-cdn.atlassian.com/aui-adg/6.0.0/js/aui-datepicker.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="http://aui-cdn.atlassian.com/aui-adg/6.0.0/css/aui.css"/>
+        <link rel="stylesheet" type="text/css" href="http://aui-cdn.atlassian.com/aui-adg/6.0.0/css/aui-experimental.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/component.css"/>
+        <!-- / External dependencies -->
+    </head>
+    <body>
+		<a href="#columns-1" aria-owns="columns-1" aria-haspopup="true" class="aui-button aui-style-default aui-dropdown2-trigger">Column 1</a>
+		<div id="columns-1" class="aui-style-default aui-dropdown2">
+			<div class="column-select-container">
+				<div class="column-select-search">
+					<form class="aui">
+						<input class="text" type="search" id="text-input" name="text-input" placeholder="Selector">
+					</form>
+				</div>
+				<div class="column-select-list enabled-list"></div>
+				<div class="column-select-list">
+					<div class="aui-dropdown2-heading">
+						<strong>Selectors</strong>
+					</div>
+					<div class="disabled-list"></div>
+				</div>
+			</div>
+		</div>
+
+		<a href="#columns-2" aria-owns="columns-2" aria-haspopup="true" class="aui-button aui-style-default aui-dropdown2-trigger">Column 2</a>
+		<div id="columns-2" class="aui-style-default aui-dropdown2">
+			<div class="column-select-container">
+				<div class="column-select-search">
+					<form class="aui">
+						<input class="text" type="search" id="text-input" name="text-input" placeholder="Selector">
+					</form>
+				</div>
+				<div class="column-select-list enabled-list"></div>
+				<div class="column-select-list">
+					<div class="aui-dropdown2-heading">
+						<strong>Selectors</strong>
+					</div>
+					<div class="disabled-list"></div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/component.js"></script>
+    </body>
+</html>
