@@ -94,14 +94,12 @@ AJS.$('#columns-1').on({
 		changeSelectorState($(e.target).attr('id'), columns1, false);
 	}
 });
-
 AJS.$("#columns-1").on({
 	"aui-dropdown2-show": function() {
-		AJS.$('input').on('input', {s: $(this), c: columns1}, searchSelector);
+		AJS.$('#column-1-search').on('input', {s: $(this), c: columns1}, searchSelector);
 	},
 	"aui-dropdown2-hide": function() {
-		AJS.$('input').val('');
-		AJS.$('input').off('input', {s: $(this), c: columns1}, searchSelector);
+		AJS.$('#column-1-search').val('').off('input', {s: $(this), c: columns1}, searchSelector);
 	}
 });
 AJS.$('#columns-2').on({
@@ -112,14 +110,12 @@ AJS.$('#columns-2').on({
 		changeSelectorState($(e.target).attr('id'), columns2, false);
 	}
 });
-
 AJS.$("#columns-2").on({
 	"aui-dropdown2-show": function() {
-		AJS.$('input').on('input', {s: $(this), c: columns2}, searchSelector);
+		AJS.$('#column-2-search').on('input', {s: $(this), c: columns2}, searchSelector);
 	},
 	"aui-dropdown2-hide": function() {
-		AJS.$('input').val('');
-		AJS.$('input').off('input', {s: $(this), c: columns2}, searchSelector);
+		AJS.$('#column-2-search').val('').off('input', {s: $(this), c: columns2}, searchSelector);
 	}
 });
 
