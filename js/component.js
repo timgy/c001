@@ -138,6 +138,7 @@ function fillColumnsSelector(selector, columns) {
 		result.push(column.name);
 		result.push('</a></li>');
 	});
+
 	enabled.push('</ul>');
 	disabled.push('</ul>');
 	selector.find( ".enabled-list" ).html(enabled.join(''));
@@ -145,7 +146,6 @@ function fillColumnsSelector(selector, columns) {
 }
 
 function changeSelectorState(id, columns, value) {
-	// console.log(id, value);
 	columns.forEach(function(column) {
 		if(column.id == id){
 			column.selected = value;
@@ -159,7 +159,6 @@ function searchSelector(e) {
 		result = [];
 	columns.forEach(function(column) {
 		if(column.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1){
-			// console.log('found:', column.name);
 			result.push(column);
 		}
 	});

@@ -6,12 +6,14 @@ body {
 	padding: 5px;
 }
 .column-select-list {
-	padding: 5px 0;
-	max-height: 200px;
+	height: 400px;
 	overflow: auto;
+}
+.column-select-items {
+	padding: 5px 0;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
-.column-select-list:last-child {
+.column-select-items:last-child {
 	border-bottom: none;
 }
 .column-select-search {
