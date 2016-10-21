@@ -119,7 +119,7 @@ AJS.$("#columns-2").on({
 	}
 });
 
-function fillColumnsSelector(selector, columns) {
+function fillColumnsSelector(selector, columns, highlightText) {
 	var enabled = ['<ul>'],
 		disabled = ['<ul>'],
 		result;
@@ -135,7 +135,21 @@ function fillColumnsSelector(selector, columns) {
 		result.push('" id="');
 		result.push(column.id);
 		result.push('">');
-		result.push(column.name);
+		if(highlightText){
+			var highlightStart = column.name.toLowerCase().indexOf(highlightText.toLowerCase());
+			if(highlightStart == 0){
+				result.push('<strong>' + column.name.substring(0, highlightText.length) + '</strong>');
+				result.push('<span>' + column.name.substring(highlightText.length) + '</span>');
+			} else {
+				result.push('<span>' + column.name.substring(0, highlightStart) + '</span>');
+				result.push('<strong>' + column.name.substring(highlightStart, highlightStart + highlightText.length) + '</strong>');
+				if(highlightStart + highlightText.length < column.name.length){
+					result.push('<span>' + column.name.substring(highlightStart + highlightText.length) + '</span>');
+				}
+			}
+		} else {
+			result.push(column.name);
+		}
 		result.push('</a></li>');
 	});
 
@@ -156,11 +170,12 @@ function changeSelectorState(id, columns, value) {
 function searchSelector(e) {
 	var columns = e.data.c,
 		selector = e.data.s,
-		result = [];
+		result = [],
+		searchText = e.target.value;
 	columns.forEach(function(column) {
-		if(column.name.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1){
+		if(column.name.toLowerCase().indexOf(searchText.toLowerCase()) > -1){
 			result.push(column);
 		}
 	});
-	fillColumnsSelector(selector, result);
+	fillColumnsSelector(selector, result, searchText);
 }
